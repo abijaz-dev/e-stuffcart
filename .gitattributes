@@ -1,0 +1,5 @@
+*.php linguist-detectable=true
+*.javascript linguist-detectable=false
+*.js linguist-detectable=false
+*.html linguist-detectable=true
+*.xml linguist-detectable=false
