@@ -1,0 +1,191 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#fffff2;
+}
+
+
+.container > h1 {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container > .products{
+    padding: 40px;
+}
+
+.card {
+    padding: 20px;
+    margin: 10px; 
+    margin-bottom: 10px; 
+    background-color:#f9f9f1
+}
+
+.link {
+    text-decoration:none;
+    color: black
+}
+
+.link:hover {
+    color:#6684ed
+}
+
+.product-review {
+    background-color: rgb(240, 238, 238);
+    margin: 50px 350px 10px 350px;
+    position:absolute;
+    justify-content: center;
+}
+
+
+.container > #carouselExampleControlsNoTouching {
+    padding: 50px;
+    margin: 50px 350px 10px 350px;
+    align-items: center;
+
+}
+
+#bag {
+    display:inline-block;
+    margin-right: -20px;
+    ;
+}
+
+#qua {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#navbar {
+    padding: 10px;
+    margin-bottom: 25px;
+    background-image: linear-gradient(to right, #8bffb178 , #ebeb6e82);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.navbar-brand{
+    padding: 0;
+    margin: 0 30px 0 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.7em;
+    color: #0026ffbf;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    display:block;
+}
+
+.nav-item {
+    padding: 0;
+    margin :0;   
+}
+
+.nav-item > a {
+    padding: 5px;
+    margin :5px;   
+    color: black;
+    font-weight: 400;
+    transition: transform .2s;
+}
+
+.nav-item > a:hover {
+    text-decoration: none;
+    font-weight: 600;
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    background-color: black;
+}
+
+.navbar-toggler-icon {
+    background-color: transparent;
+    
+}
+
+#price {
+    background-color:#ff55558a;
+    padding: 9px;
+    margin: 0;
+    display: inline-block;
+    border : solid #fca09d;
+    border-radius: 20px;
+}
+
+
+.cart_image > a {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: black;
+}
+
+.category > a {
+    padding: 0 0 0 0 ;
+    margin: 0px 0 0 0;
+    text-decoration: none;
+    font-weight: 400;
+    color: #0019ff
+
+}
+
+.cart_price {
+    padding: 0px 0px 0px 0px ;
+    margin: 0 0 0 0;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000
+
+}
+
+.cart_qty > input {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
+}
+
+.cart_qty > a {
+    padding: 6px 3rem 5px 1px ;
+    margin: 0px 0px 0px 0px;
+    font-size: 0.9rem;
+    
+}
+
+.total_price {
+    padding: 0 0px 0 0;
+    margin: 0 0px 0 4rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000
+
+}
+
+.cart_delete > a{
+    padding: 0;
+    margin: 0;
+    color: #607D8B;
+    transition: transform .2s;
+}
+
+.cart_delete > a:hover {
+    transform: scale(1.1);
+    color:#ff0000;
+}
+
+.total {
+    padding: 0;
+    margin: 0 0 0 0;
+    text-align: right;
+    font-size: 20px
+
+}
+
+.total_amount {
+    padding: 0 0 0 0 ;
+    margin: 0 0 0 0;
+    font-size: 20px
+}
