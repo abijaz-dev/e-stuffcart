@@ -20,7 +20,7 @@ Clone the project
    $ git clone git@github.com:abdullahijaz-dev/e-stuffcart.git
 ```
 
-Must Download XAMPP Server & Import Database File.
+Must Download XAMPP Server & Import Database File. For stripe payment ( You have to enter your own publishabled and secret key in required section [ mentioned in the code] )
 
  
 
