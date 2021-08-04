@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `category_name` varchar(50) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+  `id` int(11) UNSIGNED NULL,
+  `category_name` varchar(50) NULL,
+  `created_at` datetime NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -53,15 +53,15 @@ INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VAL
 --
 
 CREATE TABLE `products` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `price` decimal(5,2) NOT NULL,
-  `quantity` tinyint(11) UNSIGNED NOT NULL,
-  `category_id` int(11) UNSIGNED NOT NULL,
-  `image_id` int(11) UNSIGNED NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+  `id` int(11) UNSIGNED NULL,
+  `title` varchar(50) NULL,
+  `description` varchar(255) NULL,
+  `price` decimal(5,2) NULL,
+  `quantity` tinyint(11) UNSIGNED NULL,
+  `category_id` int(11) UNSIGNED NULL,
+  `image_id` int(11) UNSIGNED NULL,
+  `created_at` datetime NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -109,10 +109,10 @@ INSERT INTO `products` (`id`, `title`, `description`, `price`, `quantity`, `cate
 --
 
 CREATE TABLE `product_images` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+  `id` int(11) UNSIGNED NULL,
+  `name` varchar(255) NULL,
+  `created_at` datetime NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -154,19 +154,19 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) UNSIGNED NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

@@ -1,40 +1,41 @@
 <?php
-
-require_once('./vendor/autoload.php');
+require_once('./includes/init.inc.php');
 require_once('./config/stripeConfig.php');
 
-// Token is created using Stripe Checkout or Elements!
-// Get the payment token ID submitted by the form:
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
-    // Sanitize post array that submitted from client side
-    $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
-    
-    $token         =   $POST['stripeToken'];
-    $fname         =   $POST['f_name'];
-    $lname         =   $POST['l_name'];
-    $email         =   $POST['email'];
-    $total_items   =   $POST['items_no'];
-    $amount        =   $POST['amount'];
-    // Convert the total amount into integer ( stripe requirment )
-    $amount = number_format( ($amount * 100) , 0, '', '');
+// Sanitize The Post Array.
+$POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
+$token         =   $POST['stripeToken'];
+$firstName     =   $POST['first_name'];
+$emailAddress  =   $POST['email'];
+$countryName   =   $POST['country'];
+$cityName      =   $POST['city'];
 
+// Retrieve Amount & Convert Into Integer.
+$totalAmount = number_format(( $_SESSION['total'] * 100 ) , 0, '', '');
 
-    // Create customer in stripe
-    $customer = \Stripe\Customer::create([
-        'email' => $email,
-        'source' => $token,
-        'description' => 'A new customer purchase ' .$total_items . ' items from cart',
-    ]);
+// Create customer in stripe.
+$customer = \Stripe\Customer::create([
+  'email'       => $emailAddress,
+  'source'      => $token,
+  'description' => 'A new customer purchase '.$cart->total().' items from shopping cart',
+]);
 
+// Charge the amount from customer.
+$charge = \Stripe\Charge::create([
+  'amount'      => $totalAmount,
+  'currency'    => 'usd',
+  'description' => 'Charged from E-StuffCart',
+  'customer'    => $customer->id
+]);
 
-    // Charge the amount from customer
-    $charge = \Stripe\Charge::create([
-      'amount' => $amount,
-      'currency' => 'usd',
-      'description' => 'Example charge',
-      'customer'  => $customer->id
-    ]);
+// Redirect To Success Page.
+header('location: http://localhost/estuffcart/success/'.$charge->id.'', TRUE, 302);
 
-    // redirect user after submitting the payment
-    header('location: success.php?transaction_id='.$charge->id.'');
-    exit;
+} 
+else {
+// Redirect To Home Page.
+header('location: index');
+exit;
+}

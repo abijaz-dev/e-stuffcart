@@ -3,10 +3,10 @@ require_once __DIR__.'/../vendor/autoload.php';
 
     $stripe = [
         // Key for client side 
-        "publishable_key" => "Your Publishable Key",
+        "publishable_key" => "",
 
         // Key for server side tesing
-        "secret_key"      => "Your Secret Key",
+        "secret_key"      => "",
     ];
     
 // Set the api key
