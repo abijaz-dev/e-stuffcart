@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once __DIR__ .'/../classes/Database.php';
-require_once __DIR__ .'/../classes/AddToCart.php';
-require_once __DIR__ .'/../classes/Products.php';
 require_once 'functions.inc.php';
+require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../app/Controllers/CartController.php';
+require_once __DIR__.'/../app/Controllers/CategoryController.php';
+require_once __DIR__.'/../app/Controllers/ProductsController.php';
